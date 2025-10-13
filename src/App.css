@@ -1,56 +1,5 @@
-/* Estilos del NavBar */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-nav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-}
-
-nav h2 {
-  font-size: 1.5rem;
-  margin: 0;
-}
-
-nav ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav li {
-  margin-left: 1.5rem;
-}
-
-nav li a {
-  transition: color 0.3s ease;
-}
-
-nav li a:hover {
-  color: #5a8d46;
-}
-
-/* Estilos del CartWidget (dentro del NavBar) */
-nav div {
-  display: flex;
-  align-items: center;
-}
-
-nav span {
-  margin-left: 5px;
-  font-weight: bold;
-  color: #5a8d46;
-}
-
-/* Estilos del ItemListContainer */
+/* app.css */
+/* Estilos a las tarjetas y layout de productos */
 .itemlist {
   text-align: center;
   padding: 2rem;
@@ -60,48 +9,9 @@ nav span {
   font-size: 2rem;
   color: #5a8d46;
 }
-
-/* Estilos de las tarjetas de productos (Item) */
-.item-card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 1rem;
-  margin: 1rem;
-  background-color: #ffffff;
-  display: inline-block;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.item-card:hover {
-  transform: translateY(-5px);
-}
-
 .item-card img {
-  border-radius: 4px;
-}
-
-.item-card h4 {
-  margin: 0.5rem 0;
-  color: #2f2f2f;
-}
-
-.item-card p {
-  margin: 0.25rem 0;
-  color: #2f2f2f;
-}
-
-.item-card button {
-  background-color: #5a8d46;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.item-card button:hover {
-  background-color: #4a7538;
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  border-radius: 6px;
 }
