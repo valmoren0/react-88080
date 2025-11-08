@@ -8,7 +8,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer";
 import { CartProvider, useCart } from "./components/CartContext.jsx";
 import CartView from "./components/CartView.jsx";
 import CheckoutForm from "./components/CheckoutForm.jsx";
-import "./app.css";
+import "./App.css";
 
 const MainApp = () => {
   const { totalQuantity, addItem } = useCart();
