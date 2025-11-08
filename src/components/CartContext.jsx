@@ -1,4 +1,4 @@
-// src/context/CartContext.jsx
+// src/components/CartContext.jsx
 
 import React, { createContext, useState, useMemo, useContext } from 'react';
 
@@ -11,22 +11,18 @@ export const CartProvider = ({ children }) => {
 
     const isInCart = (id) => cart.some(item => item.id === id);
 
-    // Función que agrega/actualiza un ítem
     const addItem = (product, quantity) => {
         if (isInCart(product.id)) {
-            // Actualiza la cantidad
-            setCart(prevCart => prevCart.map(item => 
-                item.id === product.id 
-                ? { ...item, quantity: item.quantity + quantity }
-                : item
+            setCart(prevCart => prevCart.map(item =>
+                item.id === product.id
+                    ? { ...item, quantity: item.quantity + quantity }
+                    : item
             ));
         } else {
-            // Agrega el ítem nuevo
             setCart(prevCart => [...prevCart, { ...product, quantity, price: product.price }]);
         }
     };
 
-    // Funciones esenciales de manipulación
     const removeItem = (id) => {
         setCart(prevCart => prevCart.filter(item => item.id !== id));
     };
@@ -35,13 +31,13 @@ export const CartProvider = ({ children }) => {
         setCart([]);
     };
 
-    const totalQuantity = useMemo(() => 
-        cart.reduce((acc, item) => acc + item.quantity, 0), 
-    [cart]);
+    const totalQuantity = useMemo(() =>
+        cart.reduce((acc, item) => acc + item.quantity, 0),
+        [cart]);
 
-    const totalPrice = useMemo(() => 
-        cart.reduce((acc, item) => acc + (item.quantity * item.price), 0), 
-    [cart]);
+    const totalPrice = useMemo(() =>
+        cart.reduce((acc, item) => acc + (item.quantity * item.price), 0),
+        [cart]);
 
     const contextValue = useMemo(() => ({
         cart,

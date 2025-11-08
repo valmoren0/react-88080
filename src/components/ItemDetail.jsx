@@ -1,7 +1,19 @@
 // src/components/ItemDetail.jsx
-import React from "react";
+import React, { useState } from "react";
+import ItemCount from "./ItemCount";
+import { Link } from "react-router-dom";
 
 const ItemDetail = ({ item, onAdd }) => {
+  const [addedQty, setAddedQty] = useState(0);
+  const maxStock = item?.stock ?? 0;
+
+  const handleAdd = (qty) => {
+    if (qty > 0 && maxStock > 0) {
+      onAdd(item, qty);
+      setAddedQty(qty);
+    }
+  };
+
   return (
     <div className="w-full min-h-screen flex justify-center items-center p-8 md:p-16 bg-white">
       <div className="max-w-7xl bg-white shadow-2xl rounded-2xl border border-black p-16 md:p-20 m-6 md:m-10">
@@ -27,18 +39,36 @@ const ItemDetail = ({ item, onAdd }) => {
                 {item.description}
               </p>
               <p className="font-medium text-sm text-black">
-                ID de Producto: #{item.id} | Stock Disponible: {item.stock}{" "}
-                unidades
+                ID de Producto: #{item.id} | Stock Disponible: {item.stock} unidades
               </p>
             </div>
 
             <div className="mt-8">
-              <button
-                className="w-full bg-green-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-green-500 transition duration-150"
-                onClick={() => onAdd(item, 1)}
-              >
-                Agregar al carrito
-              </button>
+              {addedQty === 0 ? (
+                <ItemCount stock={item.stock} initial={1} onAdd={handleAdd} />
+              ) : (
+                <div className="flex flex-col gap-3">
+                  <div className="flex gap-3">
+                    <Link
+                      to="/cart"
+                      className="w-full text-center bg-green-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-green-500 transition duration-150"
+                    >
+                      Ir al carrito ({addedQty})
+                    </Link>
+
+                    <Link
+                      to="/"
+                      className="w-full text-center border border-gray-300 font-semibold py-3 px-6 rounded-lg hover:bg-gray-100 transition"
+                    >
+                      Seguir comprando
+                    </Link>
+                  </div>
+
+                  <p className="text-sm text-gray-600">
+                    Agregaste <strong>{addedQty}</strong> unidad(es) al carrito.
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </div>

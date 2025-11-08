@@ -26,12 +26,11 @@ const ItemListContainer = ({ greeting }) => {
       .then((snapshot) => {
         const data = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
 
-        // Asignar los productos
         setProducts(data);
       })
       .catch((error) => {
-        console.error("Error al conectar a Firestore, usando mock data:", error);
-        setProducts([]); 
+        console.error("Error al conectar a Firestore. Usando Mock API:", error);
+        setProducts(getMockProducts(categoryId));
       })
       .finally(() => {
         setLoading(false);

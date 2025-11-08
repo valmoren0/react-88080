@@ -1,12 +1,17 @@
-# React + Vite
+## ⚠️ NOTA IMPORTANTE:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Debido a los problemas técnicos y la inmodificabilidad de la fecha de entrega, el despliegue de Vercel y la confirmación de las credenciales de Firebase se adjuntan aquí.
 
-Currently, two official plugins are available:
+### ENLACES DE CORRECCIÓN:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* **URL del Repositorio (Código Fuente):** https://github.com/valmoren0/react-88080
 
-## Expanding the ESLint configuration
+* **URL de la Aplicación (Deploy Final):** react-88080-kappa.vercel.app
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **Credenciales de Firebase:** 
+VITE_FIREBASE_API_KEY="AIzaSyAaoZd35q4ybepGOOUjnctPM_TkMStbigA"
+VITE_FIREBASE_AUTH_DOMAIN="mate-imperial-ecommerce.firebaseapp.com"
+VITE_FIREBASE_PROJECT_ID="mate-imperial-ecommerce"
+VITE_FIREBASE_STORAGE_BUCKET="mate-imperial-ecommerce.firebasestorage.app"
+VITE_FIREBASE_MESSAGING_SENDER_ID="385439208041"
+VITE_FIREBASE_APP_ID="1:385439208041:web:efb03d7309bf31407e48f8"

@@ -1,9 +1,14 @@
+// src/components/CartWidget.jsx
 import React from "react";
+import { Link } from "react-router-dom";
 
-//itemCount (la cantidad total de productos en el carrito)
 const CartWidget = ({ itemCount }) => {
   return (
-    <div className="relative cursor-pointer p-2 hover:bg-gray-700 rounded transition duration-150">
+    <Link
+      to="/cart"
+      aria-label="Ver carrito"
+      className="relative cursor-pointer p-2 hover:bg-gray-700 rounded transition duration-150"
+    >
       <svg
         className="w-6 h-6 text-white"
         fill="none"
@@ -19,13 +24,12 @@ const CartWidget = ({ itemCount }) => {
         ></path>
       </svg>
 
-      {/* Contador: Solo se muestra si itemCount es mayor a 0 */}
       {itemCount > 0 && (
         <span className="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full">
           {itemCount}
         </span>
       )}
-    </div>
+    </Link>
   );
 };
 
